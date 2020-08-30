@@ -11,6 +11,9 @@ public class MoodAnalyser {
     public MoodAnalyser() {
 
     }
+       String MoodAnalyser(){
+        return "SAD";
+       }
 
     public String analyseMood(String message) {
         try {
