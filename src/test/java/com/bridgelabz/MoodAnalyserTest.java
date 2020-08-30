@@ -1,7 +1,5 @@
 package com.bridgelabz;
 
-import com.bridgelabz.MoodAnalyser.MoodAnalyser;
-import com.bridgelabz.MoodAnalyser.MoodAnalysisException.MoodAnalysisException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -55,6 +53,7 @@ public class MoodAnalyserTest {
             exceptionRule.expect(MoodAnalysisException.class);
             md.analyseMood(null);
         } catch (Exception e) {
+            Assert.assertEquals("Please enter proper message" ,e.getMessage());
         }
 
     }
