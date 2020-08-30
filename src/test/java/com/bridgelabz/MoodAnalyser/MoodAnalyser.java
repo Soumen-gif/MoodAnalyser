@@ -1,6 +1,8 @@
 package com.bridgelabz.MoodAnalyser;
 
-public class MoodAnalyser {
+import com.bridgelabz.MoodAnalyser.MoodAnalysisException.MoodAnalysisException;
+
+public class MoodAnalyser extends Throwable {
 
     String message;
 
@@ -15,14 +17,14 @@ public class MoodAnalyser {
         return "SAD";
        }
 
-    public String analyseMood(String message) {
+    public String analyseMood(String message) throws MoodAnalyser, MoodAnalysisException {
         try {
             if (message.contains("SAD"))
                 return "SAD";
             else
                 return "HAPPY";
         }catch (NullPointerException e) {
-            return "HAPPY";
+            throw new MoodAnalysisException("please enter proper message");
         }
     }
 }
